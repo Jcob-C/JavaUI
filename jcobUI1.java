@@ -114,6 +114,5 @@ public class jcobUI1 {
 
     void switchToPrevious() {
         cardLayout.previous(mainPanel);
-        updateListCard("list", "WTFFFFFFFFsa");
     }
 }
