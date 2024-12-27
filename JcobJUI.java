@@ -9,7 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JOptionPane;
 import java.awt.CardLayout;
 
-public class jcobUI {
+public class JcobJUI {
     // replace App.buttonPressed, set it to your own to receive buttons' action codes
     void buttonPressed(String actionCode) {
         App.buttonPressed(actionCode);
@@ -22,7 +22,7 @@ public class jcobUI {
     final String[] tableNames = new String[99];
     final int spaces = 30;
 
-    jcobUI(String windowTitle) {
+    JcobJUI(String windowTitle) {
         window.add(mainPanel);
         window.setVisible(true);
         window.setSize(400,600);
