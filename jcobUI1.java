@@ -20,6 +20,7 @@ public class jcobUI1 {
     final JPanel mainPanel = new JPanel(cardLayout);
     final JTextArea[] textAreas = new JTextArea[99];
     final String[] tableNames = new String[99];
+    final int spaces = 30;
 
     jcobUI1(String windowTitle) {
         window.add(mainPanel);
@@ -33,7 +34,6 @@ public class jcobUI1 {
 
     // options should only have 2 every row, 0 = button name, 1 = action code
     // initialize a card that only display options
-    final int spaces = 30;
     void addMenuCard(String cardName, String title, String[][] options) {
         // CARD PANEL
         JPanel panel = new JPanel();
