@@ -36,7 +36,6 @@ public class JavaUI
         addMenuCard("shit", "shit", new String[][]{{"shit","shit"}});
     }
 
-    // every button press will send its own actionCode to buttonPressed()
     // in options array {buttonName, actionCode}
     // ex: {{"Log In", "goLogIn"}, {"Sign Up", "goSignUp"}}
     public void addMenuCard(String cardName, String title, String[][] options) 
