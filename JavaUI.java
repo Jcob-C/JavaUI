@@ -1,8 +1,3 @@
-package fp2;
-
-// replace fp1.App
-import fp1.App;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JTextArea;
@@ -16,10 +11,9 @@ import java.awt.CardLayout;
 
 public class JavaUI 
 {
-    // replace App.buttonPressed
     void buttonPressed(String actionCode) 
     {
-        App.buttonPressed(actionCode);
+        // buttons handling goes here
     }
 
     final int OBJECTSPACE = 30;
@@ -42,6 +36,9 @@ public class JavaUI
         addMenuCard("shit", "shit", new String[][]{{"shit","shit"}});
     }
 
+    // every button press will send its own actionCode to buttonPressed()
+    // in options array {buttonName, actionCode}
+    // ex: {{"Log In", "goLogIn"}, {"Sign Up", "goSignUp"}}
     public void addMenuCard(String cardName, String title, String[][] options) 
     {
         JPanel panel = new JPanel();
