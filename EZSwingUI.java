@@ -9,12 +9,7 @@ import javax.swing.JScrollPane;
 import javax.swing.JOptionPane;
 import java.awt.CardLayout;
 
-public class JavaUI 
-{
-    void buttonPressed(String actionCode) 
-    {
-        // buttons handling goes here
-    }
+public class EZSwingUI {
 
     final int OBJECTSPACE = 30;
     final JFrame window = new JFrame();
@@ -22,8 +17,18 @@ public class JavaUI
     final JPanel mainPanel = new JPanel(cardLayout);
     final JTextArea[] textAreas = new JTextArea[99];
     final String[] tableNames = new String[99];
+    
+    
 
-    public JavaUI(String windowTitle) 
+    // replace Main.buttonPressed
+    void buttonPressed(String buttonActionCode) 
+    {
+        Main.buttonPressed(buttonActionCode);
+    }
+
+
+
+    public EZSwingUI(String windowTitle) 
     {
         window.add(mainPanel);
         window.setSize(400,600);
@@ -32,13 +37,14 @@ public class JavaUI
         window.setLocationRelativeTo(null);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setVisible(true);
-        // to avoid having no display when there is only one card added
-        addMenuCard("shit", "shit", new String[][]{{"shit","shit"}});
+        // for avoiding having no display when there is only one card added
+        addMenuCard("4795912", "null", new String[][]{{"null","4795912"}});
     }
 
-    // in options array {buttonName, actionCode}
-    // ex: {{"Log In", "goLogIn"}, {"Sign Up", "goSignUp"}}
-    public void addMenuCard(String cardName, String title, String[][] options) 
+
+
+    // options[][] should be {{buttonDisplayName, buttonActionCode}}
+    public void addMenuCard(String title, String cardName, String[][] options) 
     {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -61,11 +67,12 @@ public class JavaUI
             panel.add(button);
             panel.add(Box.createVerticalStrut(OBJECTSPACE));
         }
-
         mainPanel.add(panel, cardName);
     }
 
-    public void addListCard(String cardName, String title) 
+
+
+    public void addListCard(String title, String cardName) 
     {
         JPanel panel = new JPanel();
         panel.setLayout(new BoxLayout(panel, BoxLayout.Y_AXIS));
@@ -100,7 +107,9 @@ public class JavaUI
         }
     }
     
-    public void updateListCard(String cardName, String newText) 
+
+
+    public void changeTextOfListCard(String cardName, String newText) 
     {
         for (int i = 0; i < 99; i++) 
         {
@@ -111,20 +120,28 @@ public class JavaUI
         }
     }
 
+
+
     public String ask(String question) 
     {
         return JOptionPane.showInputDialog(question);
     }
+
+
 
     public void show(String message) 
     {
         JOptionPane.showMessageDialog(null, message);
     }
 
+
+
     public void switchTo(String cardName) 
     {
         cardLayout.show(mainPanel, cardName);
     }
+
+
 
     public void switchToPrevious() 
     {
